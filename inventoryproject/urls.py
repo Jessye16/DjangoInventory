@@ -15,8 +15,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from inventory.views import ProductCreateView
+from inventory.views import ProductListView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', ProductListView.as_view(), name='product-list'),
     url(r'create/', ProductCreateView.as_view(), name='create-product')
 ]

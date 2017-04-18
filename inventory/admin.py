@@ -18,7 +18,7 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
     def disponible(self, object):
-        return True if object.quantity > 0 else False
+        return True if object.quantity > 0 else False 
     disponible.boolean = True
 
 class MemberAdmin(admin.ModelAdmin):

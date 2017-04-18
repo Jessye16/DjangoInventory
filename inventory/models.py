@@ -110,7 +110,11 @@ class Product(Parano, models.Model):
         #ordering = ['-created_at']
 
     def __str__(self):
-        return str(self.brand)
+        return str(self.name)
+
+    #def disponible(self):
+    #    return False
+
 
     def get_absolute_url(self):
         return '/'+str(self.id)+'/'
