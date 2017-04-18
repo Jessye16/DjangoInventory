@@ -3,18 +3,6 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 # Create your models here.
-#-----------------MEMBER-----------------
-class Member(models.Model):
-    user = models.OneToOneField(
-        User,
-        related_name="member" #facultatif dans un OneToOneField puisque fait direct le lien symétrique
-    )
-    class Meta:
-        app_label="inventory"
-        ordering=["user__date_joined"]
-
-    def __str__(self):
-        return str(self.user.username)
 
 #-------------PARANO--------------------
 class Parano(models.Model):
@@ -47,6 +35,19 @@ class Parano(models.Model):
     class Meta:
         abstract = True
         app_label = "inventory"
+        
+#-----------------MEMBER-----------------
+class Member(models.Model):
+    user = models.OneToOneField(
+        User,
+        related_name="member" #facultatif dans un OneToOneField puisque fait direct le lien symétrique
+    )
+    class Meta:
+        app_label="inventory"
+        ordering=["user__date_joined"]
+
+    def __str__(self):
+        return str(self.user.username)
 
 
 #-------------PRODUCT-----------------
@@ -98,13 +99,11 @@ class Product(Parano, models.Model):
         blank=True
     )
 
-    stock = models.BooleanField(
-        verbose_name="En stock ?",
-        default=False,
-        blank=True
-    )
-
-
+    # stock = models.BooleanField(
+    #     verbose_name="En stock ?",
+    #     default=False,
+    #     blank=True
+    # )
 
     class Meta:
         app_label = "inventory"

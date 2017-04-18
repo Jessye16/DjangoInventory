@@ -9,13 +9,17 @@ class ProductAdmin(admin.ModelAdmin):
         'type',
         'gender',
         'description',
-        'stock',
         'quantity',
+        'disponible',
         'created_by',
         'created_at',
         'modified_by',
-        'modified_at'
+        'modified_at',
     )
+
+    def disponible(self, object):
+        return True if object.quantity > 0 else False
+    disponible.boolean = True
 
 class MemberAdmin(admin.ModelAdmin):
     list_display = (
