@@ -6,6 +6,7 @@ from django.views.generic import DetailView
 from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from inventory.forms import ProductCreateForm
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -38,3 +39,6 @@ class ProductDeleteView(DeleteView):
 
     def get_initial(self):
         return {'modified_by': self.request.user.member}
+
+def login_redirection(request):
+    return redirect('login')

@@ -14,17 +14,23 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from inventory.views import ProductCreateView
 from inventory.views import ProductListView
 from inventory.views import ProductDetailView
 from inventory.views import ProductUpdateView
 from inventory.views import ProductDeleteView
+from django.views.generic import TemplateView
 
 urlpatterns = [
+    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^accounts/profile/$', TemplateView.as_view(template_name='test.html'), name='user_profile'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', ProductListView.as_view(), name='product-list'),
+    url(r'^jjj', ProductListView.as_view(), name='product-list'),
     url(r'create/', ProductCreateView.as_view(), name='create-product'),
     url(r'^(?P<pk>\d+)/$', ProductDetailView.as_view(), name='product-detail'),
     url(r'^(?P<pk>\d+)/update/', ProductUpdateView.as_view(), name='product-update'),
     url(r'^(?P<pk>\d+)/delete/', ProductDeleteView.as_view(), name='product-delete'),
+    url(r'^$', 'inventory.views.login_redirection', name='login_redirection')
 ]
