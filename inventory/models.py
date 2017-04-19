@@ -24,13 +24,13 @@ class Parano(models.Model):
         verbose_name="Créé le",
         null=True,
         blank=True,
-        auto_now_add=True
+        default= timezone.now()
     )
     modified_at = models.DateTimeField(
         verbose_name="Modifié le",
         null=True,
         blank=True,
-        auto_now=True
+        default= timezone.now()
     )
     class Meta:
         abstract = True
@@ -40,7 +40,7 @@ class Parano(models.Model):
 class Member(models.Model):
     user = models.OneToOneField(
         User,
-        related_name="member" #facultatif dans un OneToOneField puisque fait direct le lien symétrique
+        related_name="member"
     )
     class Meta:
         app_label="inventory"
@@ -105,9 +105,6 @@ class Product(Parano, models.Model):
 
     def __str__(self):
         return str(self.name)
-
-    #def disponible(self):
-    #    return False
 
 
     def get_absolute_url(self):
