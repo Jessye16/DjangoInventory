@@ -1,3 +1,75 @@
+html{
+    height: 100%;
+}
+
 body{
-    background-color: red;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.small_wrap{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+#login_page{
+    background: #43cea2; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -moz-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -o-linear-gradient(bottom, #43cea2, #185a9d);
+    background: linear-gradient(to top, #43cea2, #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100%;
+    width: 100%;
+    color: #fff;
+}
+
+#login_page .header{
+   display: inline-block;
+   width: 100%;
+}
+
+#login_page .header h1{
+   font-weight: 700;
+}
+
+#login_page h2{
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+#login_page #login_form{  
+    display: inline-block;
+    width: 350px;
+}
+
+#login_page #login_form p label{
+    display: inline-block;
+    width: 100%;
+    font-weight: 300;
+    text-align: left;
+}
+
+#login_page #login_form p input{
+    background-color: transparent;
+    border: 0;
+    border-bottom:solid 1px #fff;
+    width: 100%;
+}
+
+#login_page #login_form button{
+    width: 100%;
+    background-color: #fff;
+    font-weight: 700;
+    color: #E25749;
+    border: 0;
+    padding: 8px;
+    margin-top: 18px;
+}
+
+#login_page #login_form button:hover{
+    color: #fff;
+    background-color: #E25749;
 }

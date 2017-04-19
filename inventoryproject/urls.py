@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^accounts/profile/$', TemplateView.as_view(template_name='test.html'), name='user_profile'),
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^jjj', ProductListView.as_view(), name='product-list'),
+    url(r'^list', ProductListView.as_view(), name='product-list'),
     url(r'create/', ProductCreateView.as_view(), name='create-product'),
     url(r'^(?P<pk>\d+)/$', ProductDetailView.as_view(), name='product-detail'),
     url(r'^(?P<pk>\d+)/update/', ProductUpdateView.as_view(), name='product-update'),
