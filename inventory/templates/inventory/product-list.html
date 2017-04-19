@@ -15,13 +15,6 @@
                 <li>{{product.name}}</li>
                 <li>{{product.brand}}</li>
                 <li>{{product.quantity}}</li>
-                <li>
-                    {% if product.quantity == 0 %}
-                        Pas disponible
-                    {% else %}
-                        Disponible
-                    {% endif %}
-                </li>
             </ul>
         </li> 
         {% endfor %}

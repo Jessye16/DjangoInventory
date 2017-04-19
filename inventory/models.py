@@ -99,12 +99,6 @@ class Product(Parano, models.Model):
         blank=True
     )
 
-    # stock = models.BooleanField(
-    #     verbose_name="En stock ?",
-    #     default=False,
-    #     blank=True
-    # )
-
     class Meta:
         app_label = "inventory"
         #ordering = ['-created_at']

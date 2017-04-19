@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Detail</title>
+</head>
+<body>
+    <h1>{{details.name}} detail</h1>
+
+            <ul>
+                <li>{{details.name}}</li>
+                <li>{{details.brand}}</li>
+                <li>{{details.type}}</li>
+                <li>{{details.gender}}</li>
+                <li>{{details.description}}</li>
+                <li>{{details.quantity}}</li>
+                <li>
+                    {% if details.quantity == 0 %}
+                        Pas disponible
+                    {% else %}
+                        Disponible
+                    {% endif %}
+                </li>
+            </ul>
+
+</body>
+</html>

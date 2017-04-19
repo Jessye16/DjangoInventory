@@ -16,9 +16,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from inventory.views import ProductCreateView
 from inventory.views import ProductListView
+from inventory.views import ProductDetailView
+from inventory.views import ProductUpdateView
+from inventory.views import ProductDeleteView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', ProductListView.as_view(), name='product-list'),
-    url(r'create/', ProductCreateView.as_view(), name='create-product')
+    url(r'create/', ProductCreateView.as_view(), name='create-product'),
+    url(r'^(?P<pk>\d+)/$', ProductDetailView.as_view(), name='product-detail'),
+    url(r'^(?P<pk>\d+)/update/', ProductUpdateView.as_view(), name='product-update'),
+    url(r'^(?P<pk>\d+)/delete/', ProductDeleteView.as_view(), name='product-delete'),
 ]
