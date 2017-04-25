@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Register</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
@@ -13,26 +13,25 @@
 <body>
   <section id="login_page">
     <div class="container-fluid">
+
       <div class="row text-center">
         <div class="col-md-12">
 
         <div class="header">
           <h1>Invent' <img class="header-img" src="{% static 'img/logo-inventoreasy.png' %}" alt=""/> easy</h1>
         </div>
-
+        
         <div class="wrapper">
           <form method="post" id="login_form">
-            <h2>Welcome, please log in</h2>
+            <h2>New here ? Sign up easily !</h2>
             {% csrf_token %}
             {{ form.as_p }} 
-            <button type="submit" class="btn">Log in</button>
+            <button type="submit" class="btn">Sign up</button>
           </form>
 
-          <br/><br/>
-          <h2>You don't have an account ?</h2>
-          <a class="btn no-margin" href="/register">Register here</a>
+          <a href="/login" class="small-btn">Back to login page</a>
         </div>
-
+        
         </div>
       </div>
     </div>

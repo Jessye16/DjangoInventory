@@ -7,14 +7,20 @@ from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from inventory.forms import ProductCreateForm
 from django.shortcuts import redirect
+from django.contrib.auth.forms import UserCreationForm
 
 
 # Create your views here.
+class RegisterCreateView(CreateView):
+    form_class = UserCreationForm
+    template_name = "registration/register.html"
+    success_url='/'
+
 class ProductListView(ListView):
     model = Product
     context_object_name="products"
     template_name="inventory/product-list.html" 
-    paginate_by=None #
+    paginate_by=None 
 
 class ProductCreateView(CreateView):
     model = Product

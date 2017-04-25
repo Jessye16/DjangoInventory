@@ -3,10 +3,14 @@ html{
 }
 
 body{
-    height: 100%;
     width: 100%;
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+section{
+    padding: 20px 0;
 }
 
 .small_wrap{
@@ -15,6 +19,37 @@ body{
     text-align: center;
 }
 
+.wrap{
+    width: 1000px; 
+    margin: auto;
+}
+
+.wrap-text{
+    width: 600px;
+    margin: auto;
+}
+@media screen and (max-width: 1000px){
+    .wrap{
+        width: 80%;
+        margin: auto;
+    }
+}
+@media screen and (max-width: 600px){
+    .wrap-text{
+        width: 80%;
+        margin: auto;
+    }
+}
+/* ----------------------------------------------
+     QUICK STYLES
+-----------------------------------------------*/
+.no-margin{
+    margin: 0 !important;
+}
+
+/* ----------------------------------------------
+    LOGIN PAGE 
+-----------------------------------------------*/
 #login_page{
     background: #43cea2; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(bottom, #43cea2, #185a9d);
@@ -26,21 +61,26 @@ body{
     color: #fff;
 }
 
-#login_page .header{
+.header{
    display: inline-block;
    width: 100%;
+   margin: 10px 0 20px 0;
 }
 
-#login_page .header h1{
+.header h1{
    font-weight: 700;
+}
+
+.header-img{
+    width: 150px !important;
 }
 
 #login_page h2{
     font-size: 24px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-#login_page #login_form{  
+#login_page .wrapper{
     display: inline-block;
     width: 350px;
 }
@@ -59,7 +99,12 @@ body{
     width: 100%;
 }
 
-#login_page #login_form button{
+#login_page .helptext{
+    font-size: 12px;
+    color:#333; 
+}
+
+#login_page .btn{
     width: 100%;
     background-color: #fff;
     font-weight: 700;
@@ -67,9 +112,82 @@ body{
     border: 0;
     padding: 8px;
     margin-top: 18px;
+    transition: all 0.2s ease-in-out;
 }
 
-#login_page #login_form button:hover{
+#login_page .small-btn{
+    width: auto;
+    border: solid 1px #fff;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px;
+    position: relative;
+    top: 20px;
+    z-index: 10;
+    font-weight: 100;
+    transition: all 0.2s ease-in-out;
+}
+
+#login_page .small-btn:hover{
     color: #fff;
     background-color: #E25749;
+    text-decoration: none;
+    border: solid 1px transparent;
+}
+
+#login_page .btn:hover{
+    color: #fff;
+    background-color: #E25749;
+}
+
+@media screen and (max-width: 600px){
+    .header .header-img{
+        width: 100px !important;
+    }
+
+    .header h1{
+        font-size: 26px;
+    }
+
+    .wrapper{
+        width: 90%;
+    }
+}
+
+/* ----------------------------------------------
+    START PAGE 
+-----------------------------------------------*/
+
+#start_page{
+    background: #43cea2; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -moz-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -o-linear-gradient(bottom, #43cea2, #185a9d);
+    background: linear-gradient(to top, #43cea2, #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100%;
+    width: 100%;
+    color: #fff;
+}
+
+#start_page img{
+    width: 200px;
+    margin: 14px 0;
+}
+
+#start_page a{
+    display: inline-block;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 40px;
+    background-color: #E25749;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+}
+
+#start_page a:hover{
+    background-color: #fff;
+    color: #E25749;
 }

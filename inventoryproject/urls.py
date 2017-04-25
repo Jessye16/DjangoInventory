@@ -15,6 +15,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from inventory.views import RegisterCreateView
 from inventory.views import ProductCreateView
 from inventory.views import ProductListView
 from inventory.views import ProductDetailView
@@ -24,7 +25,11 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^login/$', auth_views.login, name='login'),
-    url(r'^accounts/profile/$', TemplateView.as_view(template_name='test.html'), name='user_profile'),
+    url(r'^register/$', RegisterCreateView.as_view(), name='register'),
+    url(r'^accounts/$', include('django.contrib.auth.urls')),
+    #url(r'^register/$', 'inventory.views.register', name='register'),
+    #url(r'^complete/$', 'inventory.views.registration_complete', name='registration_complete'),
+    url(r'^accounts/profile/$', TemplateView.as_view(template_name='logged.html'), name='user_profile'),
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^list', ProductListView.as_view(), name='product-list'),
