@@ -64,7 +64,7 @@ body{
 }
 
 section{
-    padding: 20px 0;
+    padding: 20px 0 60px 0;
 }
 
 .small_wrap{
@@ -99,6 +99,26 @@ section{
 -----------------------------------------------*/
 .no-margin{
     margin: 0 !important;
+}
+
+.small-btn{
+    display: inline-block;
+    width: auto;
+    border: solid 1px #fff;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: 100;
+    transition: all 0.2s ease-in-out;
+    margin: 10px 0;
+}
+
+.small-btn:hover{
+    color: #fff;
+    background-color: #4EBFED;
+    text-decoration: none;
+    border: solid 1px transparent;
 }
 
 /* ----------------------------------------------
@@ -258,11 +278,6 @@ section{
     color: #fff;
 }
 
-#list_page .wrapper{
-    width: 1000px;
-    margin: auto;
-}
-
 #list_page .btn{
     display: inline-block;
     padding: 14px;
@@ -288,7 +303,7 @@ section{
     text-decoration: none;
     transition: all 0.2s ease-in-out;
     border-radius: 18px;
-    margin: 0 3px;
+    margin: 3px;
 }
 
 #list_page .btn-options:hover{
@@ -305,9 +320,106 @@ section{
     padding: 0 10px;   
 }
 
-@media screen and (max-width: 1000px){
-    #list_page .wrapper{
-        width: 90%;
-        margin: auto;
+/* ----------------------------------------------
+    DETAIL PAGE 
+-----------------------------------------------*/
+
+#detail_page{
+    background: #43cea2; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -moz-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -o-linear-gradient(bottom, #43cea2, #185a9d);
+    background: linear-gradient(to top, #43cea2, #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 100%;
+    color: #fff;
+}
+
+#detail_page ul{
+    list-style-type: circle;
+    margin-top: 30px;
+}
+
+#detail_page ul li{
+    margin: 10px 0;
+}
+
+
+/* ----------------------------------------------
+    CREATE PAGE 
+-----------------------------------------------*/
+
+#create_page{
+    background: #43cea2; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -moz-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -o-linear-gradient(bottom, #43cea2, #185a9d);
+    background: linear-gradient(to top, #43cea2, #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 100%;
+    color: #fff;
+}
+
+#create_page .full_height{
+    height: 100% !important;
+}
+
+#create_page form{
+    margin-top: 40px;
+}
+
+#create_page form label{
+    display: block;
+    margin-top: 16px;
+}
+
+#create_page form input{
+    border: 0;
+    border-bottom: solid 1px white;
+    background-color: transparent;
+}
+
+#create_page form select{
+    color: black;
+}
+
+#create_page form textarea{
+    background-color: white;
+    opacity: 0.8;
+    border: solid 1px white;
+    padding: 10px;
+    color: black;
+}
+
+#create_page form input[type='submit']{
+    background-color: #E25749;
+    color: #fff;
+    border-bottom: 0;
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin: 10px 0;
+    transition: all 0.2s ease-in-out;
+}
+
+#create_page form input[type='submit']:hover{
+    color: #E25749;
+    background-color: #fff;
+}
+
+ #create_page form textarea, input, select{
+        width: 80%;
+        max-width: 500px;
+}
+
+#create_page .btn{
+    padding: 10px 40px;
+    font-weight: bold;
+}
+
+#create_page .small{
+    color: #E25749;
+}
+
+@media screen and (max-width: 600px){
+    #create_page form textarea, input, select{
+        width: 100%;
     }
 }

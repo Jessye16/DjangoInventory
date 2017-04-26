@@ -41,7 +41,7 @@ class ProductDeleteView(DeleteView):
     model = Product
     form_class = ProductCreateForm
     template_name = "inventory/product-delete.html"
-    success_url = '/'
+    success_url = '/list'
 
     def get_initial(self):
         return {'modified_by': self.request.user.member}

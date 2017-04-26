@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,27 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product Detail</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
-    <h1>{{details.name}} detail</h1>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header pull-right">
+                <span>Logged as <b>{{ user.username }}&nbsp;&nbsp;</b></span>
+                <a href="{% url 'django.contrib.auth.views.logout' %}?next=/login" class="btn btn-default navbar-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="detail_page">
+        <div class="wrap">
+            <a href="/list" class="small-btn">Back to products list</a>
+            <br/><br/>
+            <h1>{{details.name}} detail</h1>
 
             <ul>
-                <li>{{details.name}}</li>
-                <li>{{details.brand}}</li>
-                <li>{{details.type}}</li>
-                <li>{{details.gender}}</li>
-                <li>{{details.description}}</li>
-                <li>{{details.quantity}}</li>
+                <li><b>Name:</b> {{details.name}}</li>
+                <li><b>Brand:</b> {{details.brand}}</li>
+                <li><b>Type:</b> {{details.type}}</li>
+                <li><b>Gender:</b> {{details.gender}}</li>
+                <li><b>Description:</b> {{details.description}}</li>
+                <li><b>Quantity:</b> {{details.quantity}}</li>
                 <li>
+                    <b>Availability:</b>
                     {% if details.quantity == 0 %}
-                        Pas disponible
+                        Unavailable
                     {% else %}
-                        Disponible
+                        Available
                     {% endif %}
                 </li>
-                <li>Modifié par : {{details.modified_by}}</li>
-                <li>Modifé le : {{details.modified_at}}</li>
+                <li><b>Modified by:</b> {{details.modified_by}}</li>
+                <li><b>Modified at:</b> {{details.modified_at}}</li>
             </ul>
-
+        </div>
+    </section>
 </body>
 </html>

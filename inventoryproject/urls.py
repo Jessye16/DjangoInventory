@@ -30,7 +30,7 @@ urlpatterns = [
     #url(r'^register/$', 'inventory.views.register', name='register'),
     #url(r'^complete/$', 'inventory.views.registration_complete', name='registration_complete'),
     url(r'^accounts/profile/$', TemplateView.as_view(template_name='logged.html'), name='user_profile'),
-    url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^list', ProductListView.as_view(), name='product-list'),
     url(r'create/', ProductCreateView.as_view(), name='create-product'),

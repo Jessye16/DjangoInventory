@@ -8,26 +8,26 @@ from django.contrib.auth.models import User
 class Parano(models.Model):
     created_by = models.ForeignKey(
         'Member',
-        verbose_name="Créé par",
+        verbose_name="Created by",
         related_name="%(app_label)s_%(class)s_creator",
         null=True,
         blank=True,
     )
     modified_by = models.ForeignKey(
         'Member',
-        verbose_name="Modifié par",
+        verbose_name="Modified by",
         related_name="%(app_label)s_%(class)s_modificator",
         null=True,
         blank=True,
     )
     created_at = models.DateTimeField(
-        verbose_name="Créé le",
+        verbose_name="Created at",
         null=True,
         blank=True,
         default= timezone.now()
     )
     modified_at = models.DateTimeField(
-        verbose_name="Modifié le",
+        verbose_name="Modified at",
         null=True,
         blank=True,
         default= timezone.now()

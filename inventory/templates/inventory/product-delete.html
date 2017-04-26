@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Delete product</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
-    <h1>Are you sure you want to delete {{products.name}} ?</h1>
-    <form action="." method="POST">
-        {% csrf_token %}
-        <input type="submit" value="Oui">
-    </form>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header pull-right">
+                <span>Logged as <b>{{ user.username }}&nbsp;&nbsp;</b></span>
+                <a href="{% url 'django.contrib.auth.views.logout' %}?next=/login" class="btn btn-default navbar-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="create_page" class="full_height">
+        <div class="wrap text-center">
+            <h2>Are you sure you want to delete <span class="small">{{product.name}}</span> ?</h2>
+            <form action="." method="POST">
+                {% csrf_token %}
+                <button type="submit" value="Oui" class="btn btn-danger">Oui</button>
+                <a href="/list" class="btn btn-default">Non</a>
+            </form>
+        </div>
+    </section>     
 </body>
 </html>

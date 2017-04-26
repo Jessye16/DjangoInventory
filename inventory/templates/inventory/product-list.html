@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <div class="navbar-header pull-right">
                 <span>Logged as <b>{{ user.username }}&nbsp;&nbsp;</b></span>
-                <button type="button" class="btn btn-default navbar-btn">Logout</button>
+                <a href="{% url 'django.contrib.auth.views.logout' %}?next=/login" class="btn btn-default navbar-btn">Logout</a>
             </div>
         </div>
     </nav>
@@ -25,11 +25,11 @@
           <h1>Invent' <img class="header-img" src="{% static 'img/logo-inventoreasy.png' %}" alt=""/> easy</h1>
         </div>
 
-        <div class="wrapper">
+        <div class="wrap">
             <h1>Product list</h1>
 
             <div>
-                <a href="/product-create" class="btn"><span class="picto icon-plus"></span> Add new Item</a>
+                <a href="/product-create" class="btn"><span class="picto icon-plus"></span> Add new item</a>
             </div>
 
             <table>

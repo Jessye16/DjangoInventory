@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Modify product</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
-    <h1>Modify {{product.name}} detail</h1>
-    <form action="." method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Valider">
-    </form>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header pull-right">
+                <span>Logged as <b>{{ user.username }}&nbsp;&nbsp;</b></span>
+                <a href="{% url 'django.contrib.auth.views.logout' %}?next=/login" class="btn btn-default navbar-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="create_page">
+        <div class="wrap">
+            <a href="/list" class="small-btn">Back to products list</a>
+            
+            <h1>Modify {{product.name}} detail</h1>
+            <form action="." method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Valider">
+            </form>
+        </div>
+    </section>
 </body>
 </html>
