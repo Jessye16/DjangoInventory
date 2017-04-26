@@ -1,23 +1,61 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Product list</title>
+    <title>Product List</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
-    <h1>Product list</h1>
-    <ul>
-        {% for product in products %}
-        <li>
-            <ul>
-                <li>{{product.name}}</li>
-                <li>{{product.brand}}</li>
-                <li>{{product.quantity}}</li>
-            </ul>
-        </li> 
-        {% endfor %}
-    </ul>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header pull-right">
+                <span>Logged as <b>{{ user.username }}&nbsp;&nbsp;</b></span>
+                <button type="button" class="btn btn-default navbar-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="list_page">
+        <div class="header text-center">
+          <h1>Invent' <img class="header-img" src="{% static 'img/logo-inventoreasy.png' %}" alt=""/> easy</h1>
+        </div>
+
+        <div class="wrapper">
+            <h1>Product list</h1>
+
+            <div>
+                <a href="/product-create" class="btn"><span class="picto icon-plus"></span> Add new Item</a>
+            </div>
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Quantity</th>
+                </tr>
+
+                {% for product in products %}
+                <tr>
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.brand}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>
+                        <a href="/{{product.id}}/" class="btn-options detail" title="View"><span class="picto icon-eye"></span></a>
+                        <a href="/{{product.id}}/update" class="btn-options update" title="Modify"><span class="picto icon-pencil"></span></a>
+                        <a href="/{{product.id}}/delete" class="btn-options delete" title="Delete"><span class="picto icon-bin"></span></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </section>
 </body>
 </html>

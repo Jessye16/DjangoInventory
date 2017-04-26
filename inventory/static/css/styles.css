@@ -4,9 +4,63 @@ html{
 
 body{
     width: 100%;
+    height: 100%;
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
+}
+
+/* ----------------------------------------------
+     FONTS
+-----------------------------------------------*/
+@font-face {
+  font-family: 'inventeasy';
+  src:  url('../font/inventeasy.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.picto {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'inventeasy' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-list-numbered:before {
+  content: "\e9b9";
+}
+.icon-eye:before {
+  content: "\e9ce";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+
+/* ----------------------------------------------
+     NAVBAR STYLES
+-----------------------------------------------*/
+
+.navbar{
+    margin-bottom: 0;
+    box-shadow: 0px 0px 40px 14px rgba(25,25,25,0.4);
+    -webkit-box-shadow: 0px 0px 40px 14px rgba(25,25,25,0.4);
+    -moz-box-shadow: 0px 0px 40px 14px rgba(25,25,25,0.4);
+    padding: 0 14px;
 }
 
 section{
@@ -56,7 +110,6 @@ section{
     background: -moz-linear-gradient(bottom, #43cea2, #185a9d);
     background: -o-linear-gradient(bottom, #43cea2, #185a9d);
     background: linear-gradient(to top, #43cea2, #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 100%;
     width: 100%;
     color: #fff;
 }
@@ -165,7 +218,6 @@ section{
     background: -moz-linear-gradient(bottom, #43cea2, #185a9d);
     background: -o-linear-gradient(bottom, #43cea2, #185a9d);
     background: linear-gradient(to top, #43cea2, #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 100%;
     width: 100%;
     color: #fff;
 }
@@ -184,10 +236,78 @@ section{
     color: #fff;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
-
 }
 
 #start_page a:hover{
     background-color: #fff;
     color: #E25749;
+}
+
+/* ----------------------------------------------
+    LIST PAGE 
+-----------------------------------------------*/
+
+#list_page{
+    background: #43cea2; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -moz-linear-gradient(bottom, #43cea2, #185a9d);
+    background: -o-linear-gradient(bottom, #43cea2, #185a9d);
+    background: linear-gradient(to top, #43cea2, #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+#list_page .wrapper{
+    width: 1000px;
+    margin: auto;
+}
+
+#list_page .btn{
+    display: inline-block;
+    padding: 14px;
+    margin: 14px 0;
+    border-radius: 40px;
+    background-color: #E25749;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+#list_page .btn:hover{
+    background-color: #fff;
+    color: #E25749;
+}
+
+#list_page .btn-options{
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: #fff;
+    color: #888;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    border-radius: 18px;
+    margin: 0 3px;
+}
+
+#list_page .btn-options:hover{
+    background-color: #E25749;
+    color: #fff;
+}
+
+#list_page table tr{
+    border-bottom: solid 1px white;
+    height: 45px;   
+}
+
+#list_page table tr td,th{
+    padding: 0 10px;   
+}
+
+@media screen and (max-width: 1000px){
+    #list_page .wrapper{
+        width: 90%;
+        margin: auto;
+    }
 }

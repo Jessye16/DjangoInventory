@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header pull-right">
+                <span>Logged as <b>{{ user.username }}&nbsp;&nbsp;</b></span>
+                <button type="button" class="btn btn-default navbar-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
     <section id="start_page">
         <div class="small_wrap text-center">
             <div class="header">

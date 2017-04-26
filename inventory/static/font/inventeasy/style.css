@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'inventeasy';
+  src:  url('fonts/inventeasy.eot?otxoz5');
+  src:  url('fonts/inventeasy.eot?otxoz5#iefix') format('embedded-opentype'),
+    url('fonts/inventeasy.ttf?otxoz5') format('truetype'),
+    url('fonts/inventeasy.woff?otxoz5') format('woff'),
+    url('fonts/inventeasy.svg?otxoz5#inventeasy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.picto {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'inventeasy' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-list-numbered:before {
+  content: "\e9b9";
+}
+.icon-eye:before {
+  content: "\e9ce";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+
